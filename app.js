@@ -293,15 +293,21 @@
   }
 
   /**
-   * 2. HIGH QUALITY CANVAS ENGINE
+   * 2. HIGH QUALITY CANVAS ENGINE (MOBILE RESILIENT)
    */
+  let lastCanvasWidth = 0;
+  let lastCanvasHeight = 0;
+
   function resizeCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
+    lastCanvasWidth = width;
+    lastCanvasHeight = height;
+
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
 
     ctx.scale(dpr, dpr);
     ctx.imageSmoothingEnabled = true;
@@ -311,7 +317,20 @@
     drawFrame(images[Math.round(currentFrame)] || images[1]);
   }
 
-  window.addEventListener('resize', resizeCanvas);
+  function handleWindowResize() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    // On mobile touch scrolls, the URL bar expands/contracts changing height by <80px while width remains constant.
+    // Only reallocate the canvas backing buffer if width changed or height changed drastically (orientation change).
+    if (Math.abs(w - lastCanvasWidth) > 8 || Math.abs(h - lastCanvasHeight) > 120) {
+      resizeCanvas();
+    }
+  }
+
+  window.addEventListener('resize', handleWindowResize, { passive: true });
+  window.addEventListener('orientationchange', () => {
+    setTimeout(resizeCanvas, 150);
+  });
 
   function drawFrame(img) {
     if (!img || !img.complete || img.naturalWidth === 0) return;
@@ -1207,6 +1226,14 @@
       const waLink = `https://wa.me/${config.whatsapp}?text=Hello%20${encodeURIComponent(config.companyName)},%20I%20would%20like%20to%20inquire%20about%20a%20private%20architectural%20commission.`;
       btnWa.href = waLink;
     }
+
+    const mobileDrawerPhone = document.getElementById('mobile-drawer-phone');
+    if (mobileDrawerPhone) mobileDrawerPhone.textContent = config.phone;
+
+    const mobileDrawerWa = document.getElementById('mobile-drawer-wa');
+    if (mobileDrawerWa && config.whatsapp) {
+      mobileDrawerWa.href = `https://wa.me/${config.whatsapp}?text=Hello%20${encodeURIComponent(config.companyName)},%20I%20would%20like%20to%20inquire%20about%20a%20private%20architectural%20commission.`;
+    }
   }
 
   // Cloud Config (Supabase)
@@ -1353,9 +1380,60 @@
     });
   }
 
-  // Escape to close
+  // Mobile Navigation Drawer Controller
+  const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+  const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function openMobileNav() {
+    if (!mobileNavDrawer || !mobileNavToggle) return;
+    mobileNavToggle.classList.add('open');
+    mobileNavToggle.setAttribute('aria-expanded', 'true');
+    mobileNavDrawer.classList.add('open');
+    mobileNavDrawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileNav() {
+    if (!mobileNavDrawer || !mobileNavToggle) return;
+    mobileNavToggle.classList.remove('open');
+    mobileNavToggle.setAttribute('aria-expanded', 'false');
+    mobileNavDrawer.classList.remove('open');
+    mobileNavDrawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', () => {
+      const isOpen = mobileNavDrawer && mobileNavDrawer.classList.contains('open');
+      if (isOpen) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+  }
+
+  if (mobileNavLinks) {
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileNav();
+      });
+    });
+  }
+
+  if (mobileNavDrawer) {
+    mobileNavDrawer.addEventListener('click', (e) => {
+      if (e.target === mobileNavDrawer) {
+        closeMobileNav();
+      }
+    });
+  }
+
+  // Escape to close all overlays
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      if (mobileNavDrawer && mobileNavDrawer.classList.contains('open')) closeMobileNav();
       if (modalProject) modalProject.classList.remove('open');
       if (adminProjectEditorModal) adminProjectEditorModal.classList.remove('open');
       if (adminModal) adminModal.classList.remove('open');

@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070809">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>PAK INTERIORS — Lahore</title>
   <meta name="description" content="PAK Interiors is a premier architectural and interior design atelier in Lahore, Pakistan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2.5">
+  <link rel="stylesheet" href="style.css?v=3.0">
 </head>
 <body>
 
@@ -21,7 +24,7 @@
     </div>
   </div>
 
-  <!-- Ultra-Minimal Navigation (Zero Widgets, Pure Typography) -->
+  <!-- Ultra-Minimal Navigation -->
   <header class="site-header" id="main-header">
     <div class="header-inner">
       <a href="#hero" class="brand-link" id="brand-link">
@@ -29,13 +32,45 @@
         <span class="brand-name" id="nav-brand-name">PAK INTERIORS</span>
       </a>
 
-      <nav class="site-nav">
+      <!-- Desktop Navigation -->
+      <nav class="site-nav" id="desktop-nav">
         <a href="#projects" class="nav-link">Portfolio</a>
         <a href="#about" class="nav-link">Atelier</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile Fullscreen Drawer Navigation -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-inner">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-brand">PAK INTERIORS</span>
+        <span class="mobile-nav-badge">LAHORE</span>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-link" data-num="01"><span class="m-num">01</span><span class="m-txt">Overview</span></a>
+        <a href="#projects" class="mobile-nav-link" data-num="02"><span class="m-num">02</span><span class="m-txt">Selected Works</span></a>
+        <a href="#about" class="mobile-nav-link" data-num="03"><span class="m-num">03</span><span class="m-txt">The Atelier</span></a>
+        <a href="#contact" class="mobile-nav-link" data-num="04"><span class="m-num">04</span><span class="m-txt">Consultation</span></a>
+      </nav>
+      <div class="mobile-nav-bottom">
+        <a href="https://wa.me/923008457700" target="_blank" rel="noopener" class="mobile-wa-direct" id="mobile-drawer-wa">
+          <span>Direct WhatsApp Inquiry</span> &rarr;
+        </a>
+        <div class="mobile-nav-meta">
+          <span id="mobile-drawer-phone">+92 42 3578 9900</span>
+          <span>Gulberg III, Lahore</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ==========================================================================
        HERO: 300-FRAME CINEMATIC WALKTHROUGH
