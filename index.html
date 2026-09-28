@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAK INTERIORS — Lahore</title>
+  <meta name="description" content="PAK Interiors is a premier architectural and interior design atelier in Lahore, Pakistan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2.5">
+</head>
+<body>
+
+  <!-- Minimal Preloader -->
+  <div id="loader-screen" class="loader-screen">
+    <div class="loader-inner">
+      <span class="loader-title">PAK INTERIORS</span>
+      <span class="loader-sub">LAHORE</span>
+      <div class="loader-line"><div id="progress-bar-fill" class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Ultra-Minimal Navigation (Zero Widgets, Pure Typography) -->
+  <header class="site-header" id="main-header">
+    <div class="header-inner">
+      <a href="#hero" class="brand-link" id="brand-link">
+        <img id="nav-brand-logo" src="" alt="PAK Interiors" class="brand-logo hidden">
+        <span class="brand-name" id="nav-brand-name">PAK INTERIORS</span>
+      </a>
+
+      <nav class="site-nav">
+        <a href="#projects" class="nav-link">Portfolio</a>
+        <a href="#about" class="nav-link">Atelier</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO: 300-FRAME CINEMATIC WALKTHROUGH
+       Zero cards, zero timelines. Pure footage + two-sided editorial typography.
+       ========================================================================== -->
+  <section id="hero" class="hero-scroll-stage">
+    <div class="hero-sticky-wrap" id="hero-sticky-wrap">
+      <canvas id="animation-canvas"></canvas>
+      <div class="cinematic-gradient"></div>
+
+      <!-- Center Stage Heading & Logo for initial frames -->
+      <div class="hero-center-intro" id="hero-center-intro">
+        <img id="hero-center-logo" src="" alt="PAK Interiors" class="hero-center-logo hidden">
+        <h1 class="hero-center-title" id="hero-center-title">PAK INTERIORS</h1>
+        <span class="hero-center-rule"></span>
+        <p class="hero-center-sub" id="hero-center-sub">ARCHITECTURE &amp; BESPOKE INTERIOR ATELIER</p>
+        <span class="hero-scroll-hint">SCROLL TO DISCOVER &darr;</span>
+      </div>
+
+      <!-- Pure Two-Sided Typography (Appears one by one as you scroll) -->
+      <div class="hero-split-text" id="hero-split-text">
+        <!-- Left Side: Title & Scale -->
+        <div class="split-side split-left" id="hero-left">
+          <span class="editorial-num" id="hero-num">01</span>
+          <h1 class="editorial-headline" id="hero-title">The Grand Threshold</h1>
+          <span class="editorial-sub" id="hero-tag">DHA PHASE 6 • 2 KANAL</span>
+        </div>
+
+        <!-- Right Side: Architectural Prose -->
+        <div class="split-side split-right" id="hero-right">
+          <p class="editorial-prose" id="hero-prose">
+            Monumental 10-foot black steel pivot glazing juxtaposed against quarter-sawn teak siding, opening into a sunlit courtyard.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: PORTFOLIO (MINIMALIST EDITORIAL)
+       Clean large imagery, serene captions
+       ========================================================================== -->
+  <section id="projects" class="content-section">
+    <div class="container-wide">
+      <div class="section-title-wrap">
+        <span class="minimal-eyebrow">SELECTED WORKS</span>
+        <h2 class="minimal-heading">Architectural Commissions</h2>
+      </div>
+
+      <div class="portfolio-grid" id="projects-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: THE ATELIER (ABOUT)
+       Literary narrative, quiet luxury
+       ========================================================================== -->
+  <section id="about" class="content-section">
+    <div class="container-narrow">
+      <div class="essay-block">
+        <span class="minimal-eyebrow">THE ATELIER</span>
+        <h2 class="essay-heading">A Dialogue Between Space, Light & Material</h2>
+        
+        <p class="essay-lead">
+          Founded in Lahore, PAK Interiors designs private residences that favor stillness over noise. We believe architecture is not merely shelter, but a frame for living in quiet grace.
+        </p>
+
+        <p class="essay-body">
+          Each commission unites modern architectural discipline with Pakistani craftsmanship. In our Gulberg studio and joinery workshop, architects and master woodworkers sculpt raw teak, Italian travertine, and smoked oak into timeless environments.
+        </p>
+
+        <div class="studio-details">
+          <div>
+            <span class="detail-label">STUDIO ADDRESS</span>
+            <p class="detail-val" id="about-studio-address">Suite 402, Al-Hafeez Heights, Ghalib Rd, Gulberg III, Lahore</p>
+          </div>
+          <div>
+            <span class="detail-label">DIRECT INQUIRIES</span>
+            <p class="detail-val" id="about-studio-phone">+92 42 3578 9900 • +92 300 845 7700</p>
+          </div>
+          <div>
+            <span class="detail-label">CORRESPONDENCE</span>
+            <p class="detail-val" id="about-studio-email">atelier@pakinteriors.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="full-bleed-image">
+        <img src="assets/projects/bedian_farmhouse.jpg" alt="Bedian Country Estate" class="minimal-img">
+        <span class="img-meta">Bedian Country Residence • Pavilion & Courtyard Pool</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: TESTIMONIALS (EDITORIAL SINGLE QUOTES)
+       ========================================================================== -->
+  <section id="testimonials" class="content-section">
+    <div class="container-narrow">
+      <div class="quotes-stream" id="testimonials-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: CONTACT & CONSULTATION
+       Hairline inputs, quiet aesthetic
+       ========================================================================== -->
+  <section id="contact" class="content-section section-last">
+    <div class="container-narrow">
+      <div class="contact-header">
+        <span class="minimal-eyebrow">COMMISSIONS</span>
+        <h2 class="minimal-heading">Private Inquiries</h2>
+        <p class="contact-sub">We welcome inquiries for residential and architectural commissions across Pakistan and abroad.</p>
+      </div>
+
+      <form id="contact-form" class="minimal-form" onsubmit="event.preventDefault(); window.submitLead();">
+        <div class="form-grid">
+          <div class="field-item">
+            <input type="text" id="contact-name" placeholder="Full Name" required>
+          </div>
+          <div class="field-item">
+            <input type="tel" id="contact-phone" placeholder="WhatsApp / Phone" required>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field-item">
+            <input type="email" id="contact-email" placeholder="Email">
+          </div>
+          <div class="field-item">
+            <select id="contact-location">
+              <option value="DHA Phase 6 / 7 / 8">DHA Phase 6 / 7 / 8, Lahore</option>
+              <option value="DHA Phase 1 - 5">DHA Phase 1 - 5, Lahore</option>
+              <option value="Gulberg III">Gulberg III, Lahore</option>
+              <option value="Raya Fairways">Raya Fairways, Lahore</option>
+              <option value="Bedian / Farmhouse">Bedian Country Estate</option>
+              <option value="Islamabad / Overseas">Islamabad / Overseas</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-item">
+          <textarea id="contact-notes" rows="2" placeholder="Brief details on the residence or scale..."></textarea>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn-minimal-submit">Send Inquiry ➔</button>
+          <a href="https://wa.me/923008457700?text=Hello%20PAK%20Interiors,%20I%20would%20like%20to%20inquire%20about%20a%20private%20architectural%20commission." 
+             target="_blank" rel="noopener" class="wa-quiet-link" id="btn-whatsapp-large">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </form>
+
+      <div id="contact-success-msg" class="success-notice hidden">
+        <p>Inquiry received. Our principal architect will be in touch shortly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiet Minimalist Footer -->
+  <footer class="minimal-footer">
+    <div class="footer-content">
+      <span class="footer-title">PAK INTERIORS — LAHORE</span>
+      <div class="footer-links">
+        <a href="#projects">Portfolio</a>
+        <a href="#about">Atelier</a>
+        <a href="#contact">Contact</a>
+        <button id="btn-footer-admin" class="btn-cms-quiet">CMS</button>
+      </div>
+      <span class="footer-cr">© 2026 PAK Interiors.</span>
+    </div>
+  </footer>
+
+  <!-- PROJECT LIGHTBOX MODAL -->
+  <div id="modal-project" class="modal-overlay">
+    <div class="modal-inner">
+      <button id="btn-close-project" class="modal-close-btn">✕</button>
+      <div class="modal-media-wrap">
+        <div id="modal-viewport" class="modal-viewport">
+          <img id="modal-proj-img" src="" alt="Project view" class="modal-img">
+          <video id="modal-proj-video" class="modal-video hidden" controls autoplay muted loop playsinline></video>
+        </div>
+        <div id="modal-thumbs-strip" class="modal-thumbs-strip hidden"></div>
+      </div>
+      <div class="modal-info-wrap">
+        <span class="modal-eyebrow" id="modal-proj-category">VILLA</span>
+        <h3 class="modal-title" id="modal-proj-title">The Courtyard Villa</h3>
+        <p class="modal-loc" id="modal-proj-location">DHA Phase 6, Lahore</p>
+        <p class="modal-desc" id="modal-proj-desc"></p>
+        <a href="#contact" class="modal-inquire-link" id="btn-modal-inquire">Inquire on this project ➔</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STUDIO CMS MODAL (ADMIN) -->
+  <div id="admin-modal" class="modal-overlay admin-overlay">
+    <div id="admin-auth-card" class="admin-box-auth">
+      <h3 class="admin-auth-title">Studio CMS</h3>
+      <form id="admin-auth-form" onsubmit="event.preventDefault(); window.checkAdminAuth();">
+        <input type="password" id="admin-passcode" placeholder="Master Passcode" required autofocus>
+        <p id="admin-auth-error" class="auth-err hidden">Incorrect passcode.</p>
+        <div class="admin-btn-row">
+          <button type="button" class="btn-ghost" id="btn-close-admin-auth">Close</button>
+          <button type="submit" class="btn-solid">Unlock</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="admin-dashboard-card" class="admin-box-dash hidden">
+      <div class="dash-head">
+        <h4>PAK Interiors — CMS</h4>
+        <div class="dash-btns">
+          <button id="btn-admin-logout" class="btn-ghost btn-mini">Sign Out</button>
+          <button id="btn-close-admin" class="modal-close-btn">✕</button>
+        </div>
+      </div>
+
+      <div class="dash-tabs">
+        <button class="dash-tab active" data-tab="tab-projects">Projects</button>
+        <button class="dash-tab" data-tab="tab-testimonials">Testimonials</button>
+        <button class="dash-tab" data-tab="tab-leads">Leads</button>
+        <button class="dash-tab" data-tab="tab-whitelabel">Branding</button>
+        <button class="dash-tab" data-tab="tab-cloud">Cloud Sync</button>
+      </div>
+
+      <div class="dash-panels">
+        <!-- Projects Panel -->
+        <div id="tab-projects" class="dash-panel active">
+          <div class="panel-top">
+            <span>Catalog (<span id="admin-proj-count">0</span>)</span>
+            <button id="btn-add-project-modal" class="btn-solid btn-mini">+ Add Project</button>
+          </div>
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Location</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-projects-tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- Testimonials Panel -->
+        <div id="tab-testimonials" class="dash-panel">
+          <div class="panel-top">
+            <span>Testimonials (<span id="admin-testim-count">0</span>)</span>
+            <button id="btn-add-testimonial-modal" class="btn-solid btn-mini">+ Add Testimonial</button>
+          </div>
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Location</th>
+                <th>Quote</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="admin-testimonials-tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- Leads Panel -->
+        <div id="tab-leads" class="dash-panel">
+          <div class="panel-top">
+            <span>Inquiries (<span id="admin-leads-count">0</span>)</span>
+            <button id="btn-clear-leads" class="btn-ghost btn-mini">Clear All</button>
+          </div>
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Client</th>
+                <th>Phone</th>
+                <th>Location</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="admin-leads-tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- White-Label & Branding Panel -->
+        <div id="tab-whitelabel" class="dash-panel">
+          <form id="whitelabel-form" class="cms-form" onsubmit="event.preventDefault(); window.saveWhiteLabel();">
+            <div>
+              <label>Company Logo</label>
+              <div class="file-pick-row">
+                <input type="text" id="cfg-company-logo" placeholder="Paste logo URL or upload image">
+                <label class="btn-ghost btn-mini file-label">
+                  <span>Upload Logo</span>
+                  <input type="file" id="cfg-logo-file" accept="image/*" class="hidden">
+                </label>
+              </div>
+              <div id="cfg-logo-preview-box" class="preview-mini hidden" style="height: 48px; margin-top: 6px;">
+                <img id="cfg-logo-preview-img" src="" alt="Logo Preview" style="height: 100%; width: auto; object-fit: contain;">
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div>
+                <label>Company Name</label>
+                <input type="text" id="cfg-company-name" value="PAK INTERIORS">
+              </div>
+              <div>
+                <label>Location / City</label>
+                <input type="text" id="cfg-company-tagline" value="LAHORE">
+              </div>
+            </div>
+            <div class="form-grid">
+              <div>
+                <label>Studio Phone</label>
+                <input type="text" id="cfg-company-phone" value="+92 42 3578 9900">
+              </div>
+              <div>
+                <label>Studio WhatsApp</label>
+                <input type="text" id="cfg-company-whatsapp" value="923008457700">
+              </div>
+            </div>
+            <div>
+              <label>Studio Address</label>
+              <input type="text" id="cfg-company-address" value="Suite 402, Al-Hafeez Heights, Ghalib Rd, Gulberg III, Lahore">
+            </div>
+
+            <div class="form-grid">
+              <div>
+                <label>WhatsApp Alert Phone (Owner)</label>
+                <input type="text" id="cfg-notify-whatsapp" placeholder="e.g. 923008457700">
+                <small style="color: var(--text-muted); font-size: 10px;">Phone number to receive silent WhatsApp notification in background.</small>
+              </div>
+              <div>
+                <label>CallMeBot WhatsApp API Key (Optional)</label>
+                <input type="text" id="cfg-whatsapp-apikey" placeholder="Enter CallMeBot API key">
+                <small style="color: var(--text-muted); font-size: 10px;">Free API to send WhatsApp message silently to owner without opening customer WhatsApp.</small>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div>
+                <label>Lead Alert Email (Owner)</label>
+                <input type="email" id="cfg-notify-email" placeholder="e.g. owner@pakinteriors.com">
+                <small style="color: var(--text-muted); font-size: 10px;">Inquiry notification recipient email.</small>
+              </div>
+              <div>
+                <label>Custom Webhook URL (Optional)</label>
+                <input type="url" id="cfg-notify-webhook" placeholder="https://hook.eu1.make.com/... or Zapier">
+                <small style="color: var(--text-muted); font-size: 10px;">Instant background POST webhook for Make, Zapier, or WhatsApp bot.</small>
+              </div>
+            </div>
+
+            <div class="cms-btn-row">
+              <button type="submit" class="btn-solid">Save Branding</button>
+              <button type="button" id="btn-export-config" class="btn-ghost">Export JSON</button>
+              <button type="button" id="btn-import-config" class="btn-ghost">Import JSON</button>
+              <input type="file" id="file-import-config" class="hidden" accept=".json">
+            </div>
+          </form>
+
+          <!-- Security & Passcode Change -->
+          <div class="security-card" style="margin-top: 24px; padding: 20px; border: 1px solid var(--border); background: rgba(0,0,0,0.25);">
+            <h5 style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; font-weight: 500;">Change Admin Passcode</h5>
+            <form id="passcode-change-form" class="cms-form" onsubmit="event.preventDefault(); window.changeAdminPasscode();">
+              <div class="form-grid">
+                <div>
+                  <label>Current Passcode *</label>
+                  <input type="password" id="cfg-curr-passcode" placeholder="Enter current passcode" required>
+                </div>
+                <div>
+                  <label>New Passcode *</label>
+                  <input type="password" id="cfg-new-passcode" placeholder="Enter new passcode" required>
+                </div>
+              </div>
+              <div class="cms-btn-row justify-end" style="margin-top: 10px;">
+                <button type="submit" class="btn-ghost btn-mini">Update Passcode</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Cloud Sync Panel -->
+        <div id="tab-cloud" class="dash-panel">
+          <div class="cloud-status-card">
+            <div class="cloud-status-badge">
+              <span class="pulse-dot"></span>
+              <span id="cloud-status-text">Connected to Supabase PostgreSQL</span>
+            </div>
+            <p class="cloud-status-sub">Project ID: <code>knywumwbvwawvykxregm</code> • Region: <code>ap-southeast-2</code> (Active &amp; Healthy)</p>
+          </div>
+
+          <form id="cloud-config-form" class="cms-form" onsubmit="event.preventDefault(); window.saveCloudConfig();">
+            <div class="form-grid">
+              <div>
+                <label>Supabase Project URL</label>
+                <input type="text" id="cfg-supabase-url" placeholder="https://xyz.supabase.co">
+              </div>
+              <div>
+                <label>Supabase Anon Key</label>
+                <input type="password" id="cfg-supabase-key" placeholder="eyJhbGci...">
+              </div>
+            </div>
+            <div class="cms-btn-row">
+              <button type="submit" class="btn-solid">Save Cloud Config</button>
+              <button type="button" id="btn-test-cloud" class="btn-ghost">Test Connection</button>
+              <button type="button" id="btn-reset-cloud" class="btn-ghost">Reset to Default</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Add/Edit Modal -->
+  <div id="admin-project-editor-modal" class="modal-overlay sub-overlay">
+    <div class="admin-box-editor">
+      <button type="button" id="btn-close-project-editor" class="modal-close-btn">✕</button>
+      <h3 id="editor-project-title">Add Project</h3>
+      <form id="project-editor-form" class="cms-form" onsubmit="event.preventDefault(); window.saveProjectForm();">
+        <input type="hidden" id="edit-proj-id">
+        <div class="form-grid">
+          <div>
+            <label>Title *</label>
+            <input type="text" id="edit-proj-title" placeholder="e.g. The Courtyard Villa" required>
+          </div>
+          <div>
+            <label>Category *</label>
+            <select id="edit-proj-category" required>
+              <option value="villas">Villas</option>
+              <option value="penthouses">Penthouses</option>
+              <option value="farmhouses">Farmhouses</option>
+              <option value="commercial">Commercial</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div>
+            <label>Location *</label>
+            <input type="text" id="edit-proj-location" placeholder="DHA Phase 6, Lahore" required>
+          </div>
+          <div>
+            <label>Scale *</label>
+            <input type="text" id="edit-proj-area" placeholder="2 Kanal" required>
+          </div>
+        </div>
+
+        <div>
+          <label>Cover Image (Primary) *</label>
+          <div class="file-pick-row">
+            <input type="text" id="edit-proj-image-url" placeholder="Paste image URL">
+            <label class="btn-ghost btn-mini file-label">
+              <span>Choose File</span>
+              <input type="file" id="edit-proj-file" accept="image/*" class="hidden">
+            </label>
+          </div>
+          <div id="image-preview-box" class="preview-mini hidden">
+            <img id="edit-proj-preview-img" src="" alt="Preview">
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label style="margin-bottom: 0;">Project Gallery (Multiple Images &amp; Videos)</label>
+            <button type="button" id="btn-add-media-row" class="btn-ghost btn-mini" style="padding: 4px 10px !important;">+ Add Image / Video</button>
+          </div>
+          <div id="project-media-items-list" class="media-items-list">
+            <!-- Dynamic rows for images and videos -->
+          </div>
+        </div>
+
+        <div>
+          <label>Description *</label>
+          <textarea id="edit-proj-desc" rows="3" required></textarea>
+        </div>
+
+        <div class="cms-btn-row justify-end">
+          <button type="button" id="btn-cancel-project-editor" class="btn-ghost">Cancel</button>
+          <button type="submit" class="btn-solid">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Failsafe: dismiss preloader automatically after 1.8s in case of any network or caching stalls
+    setTimeout(function() {
+      var loader = document.getElementById('loader-screen');
+      if (loader) {
+        loader.classList.add('loaded');
+        setTimeout(function() { loader.style.display = 'none'; }, 800);
+      }
+    }, 1800);
+  </script>
+  <script src="supabase.js?v=1.2"></script>
+  <script src="app.js?v=2.5"></script>
+</body>
+</html>

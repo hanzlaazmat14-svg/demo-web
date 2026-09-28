@@ -1,0 +1,16 @@
+# Large zip archives
+*.zip
+
+# Local browser debug logs and dumps
+edge_*.html
+edge_*.log
+*.log
+
+# Local preview screenshots
+site_*preview*.png
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
